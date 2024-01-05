@@ -1,5 +1,7 @@
 venv
-.env
+
+# Ideally in .gitignore but included it for easy setup!
+# .env
 
 # Django #
 *.log
