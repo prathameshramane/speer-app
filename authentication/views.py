@@ -18,8 +18,6 @@ class RegisterView(APIView):
         if serialized_user.is_valid():
             serialized_user.save()
             user = User.objects.get(username=request.data['username'])
-            user.set_password(request.data['password'])
-            user.save()
             refresh = RefreshToken.for_user(user)
             return Response({
                 "refresh": str(refresh), 
